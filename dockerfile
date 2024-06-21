@@ -14,11 +14,9 @@ FROM oven/bun:latest
 WORKDIR /usr/src/app
 
 # Copy the built project and production dependencies
-COPY --from=base /usr/src/app/node_modules ./node_modules
-COPY --from=base /usr/src/app/.output ./.output
-COPY --from=base /usr/src/app/package.json ./
+COPY --from=base /usr/src/app/.output /.output
 
 # Run the app
 EXPOSE 8100
 ENV PORT=8100
-CMD [ "bun", "run", ".output/server/index.mjs" ]
+CMD [ "bun", "run", "/.output/server/index.mjs" ]
