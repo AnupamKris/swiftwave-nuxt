@@ -19,6 +19,6 @@ COPY --from=base /usr/src/app/.output ./.output
 COPY --from=base /usr/src/app/package.json ./
 
 # Run the app
-USER bun
+EXPOSE 8100
 ENV PORT=8100
 CMD [ "bun", "run", ".output/server/index.mjs" ]
