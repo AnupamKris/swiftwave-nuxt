@@ -21,5 +21,4 @@ COPY --from=base /usr/src/app/package.json ./
 # Run the app
 USER bun
 ENV PORT=8100
-EXPOSE 8100/tcp
-ENTRYPOINT [ "bun", "run", ".output/server/index.mjs" ]
+CMD [ "bun", "run", ".output/server/index.mjs" ]
